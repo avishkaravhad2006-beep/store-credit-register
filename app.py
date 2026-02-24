@@ -3,7 +3,7 @@ import sqlite3
 from contextlib import contextmanager
 import pandas as pd
 import streamlit as st
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 
@@ -172,7 +172,8 @@ def main():
     initialize_session_state()
     
     st.title("📋 Store Credit Register")
-    now = datetime.now()
+    IST = timezone(timedelta(hours=5, minutes=30))
+    now = datetime.now(IST)
     st.caption(f"Date: {now:%Y-%m-%d} | Time: {now:%H:%M:%S}")
 
     tab_new, tab_today, tab_all, tab_summary = st.tabs(
@@ -728,6 +729,7 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
 
