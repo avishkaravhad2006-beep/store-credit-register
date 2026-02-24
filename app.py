@@ -580,8 +580,7 @@ def render_all_entries_tab():
                                 st.rerun()
                                 
     except Exception as e:
-        st.error(f"❌ Error loading entries: {str(e)}"
-
+        st.error(f"❌ Error loading entries: {str(e)}")
                  
 def render_summary_tab():
     now = datetime.now() 
@@ -728,6 +727,7 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
 
