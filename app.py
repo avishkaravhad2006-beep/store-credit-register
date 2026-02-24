@@ -198,7 +198,8 @@ def main():
         
 def render_new_entry_tab():
             now = datetime.now() 
-     """Render the new entry tab"""
+    
+    """Render the new entry tab"""
     st.subheader("📝 New Entry")
 
     st.radio("Customer Type", ["Office", "Others"], horizontal=True, key="customer_type")
@@ -729,5 +730,6 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
