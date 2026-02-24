@@ -194,7 +194,7 @@ def main():
 
     # ================= SUMMARY =================
     with tab_summary:
-        render_summary_tab   
+        render_summary_tab()   
         
         
 def render_new_entry_tab():
@@ -729,6 +729,7 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
 
