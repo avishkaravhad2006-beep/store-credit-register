@@ -1,3 +1,4 @@
+from streamlit_autorefresh import st_autorefresh
 from io import BytesIO
 import sqlite3
 from contextlib import contextmanager
@@ -7,6 +8,7 @@ from datetime import datetime, timezone, timedelta
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 
+IST = timezone(timedelta(hours=5, minutes=30))
 # ================= CONSTANTS =================
 PDF_LEFT_MARGIN = 40
 PDF_TOP_MARGIN = 40
@@ -172,6 +174,7 @@ def main():
     initialize_session_state()
     
     st.title("📋 Store Credit Register")
+    st_autorefresh(interval=1000, key="clock_refresh")  # refresh every 1 second
     IST = timezone(timedelta(hours=5, minutes=30))
     now = datetime.now(IST)
     st.caption(f"Date: {now:%Y-%m-%d} | Time: {now:%H:%M:%S}")
@@ -416,8 +419,9 @@ def render_new_entry_tab():
 
 def render_today_entries_tab():
     """Render today's entries tab"""
+    st_autorefresh(interval=10000, key="today_refresh")  # refresh every 10 seconds
     st.subheader("📅 Today's Entries")
-    now = datetime.now()
+    now = datetime.now(IST)
     today = now.strftime("%Y-%m-%d")
     
     try:
@@ -729,6 +733,7 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
 
