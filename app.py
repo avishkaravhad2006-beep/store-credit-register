@@ -181,11 +181,11 @@ def main():
 
     # ================= NEW ENTRY =================
     with tab_new:
-        render_new_entry_tab(now)
+        render_new_entry_tab()
 
     # ================= TODAY ENTRIES =================
     with tab_today:
-        render_today_entries_tab(now)
+        render_today_entries_tab()
 
     # ================= ALL ENTRIES (EDIT) =================
     with tab_all:
@@ -193,11 +193,12 @@ def main():
 
     # ================= SUMMARY =================
     with tab_summary:
-        render_summary_tab(now)
-
-
-def render_new_entry_tab(now):
-    """Render the new entry tab"""
+        render_summary_tab   
+        
+        
+def render_new_entry_tab():
+            now = datetime.now() 
+     """Render the new entry tab"""
     st.subheader("📝 New Entry")
 
     st.radio("Customer Type", ["Office", "Others"], horizontal=True, key="customer_type")
@@ -580,10 +581,11 @@ def render_all_entries_tab():
                                 st.rerun()
                                 
     except Exception as e:
-        st.error(f"❌ Error loading entries: {str(e)}")
+        st.error(f"❌ Error loading entries: {str(e)}"
 
-
-def render_summary_tab(now):
+                 
+def render_summary_tab():
+    now = datetime.now() 
     """Render summary and export tab"""
     st.subheader("📊 Summary & Export")
     
@@ -727,4 +729,5 @@ def render_summary_tab(now):
 if __name__ == "__main__":
 
     main()
+
 
