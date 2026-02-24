@@ -2,7 +2,6 @@ from io import BytesIO
 import pandas as pd
 import streamlit as st
 from datetime import datetime
-impor
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 
@@ -724,4 +723,5 @@ def render_summary_tab(now):
 
 
 if __name__ == "__main__":
+
     main()
