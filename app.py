@@ -413,9 +413,10 @@ def render_new_entry_tab():
             st.stop()
 
 
-def render_today_entries_tab(now):
+def render_today_entries_tab():
     """Render today's entries tab"""
     st.subheader("📅 Today's Entries")
+    now = datetime.now()
     today = now.strftime("%Y-%m-%d")
     
     try:
@@ -727,6 +728,7 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
 
