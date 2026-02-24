@@ -419,7 +419,7 @@ def render_new_entry_tab():
 
 def render_today_entries_tab():
     """Render today's entries tab"""
-    st_autorefresh(interval=10000, key="today_refresh")  # refresh every 10 seconds
+    st_autorefresh(interval=5000, key="today_refresh")  # refresh every 10 seconds
     st.subheader("📅 Today's Entries")
     now = datetime.now(IST)
     today = now.strftime("%Y-%m-%d")
@@ -733,6 +733,7 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
 
