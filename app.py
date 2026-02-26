@@ -174,7 +174,7 @@ def main():
     initialize_session_state()
     
     st.title("📋 Store Credit Register")
-    st_autorefresh(interval=1000, key="clock_refresh")  # refresh every 1 second
+    st_autorefresh(interval=5000, key="clock_refresh")  # refresh every 5 second
     IST = timezone(timedelta(hours=5, minutes=30))
     now = datetime.now(IST)
     st.caption(f"Date: {now:%Y-%m-%d} | Time: {now:%H:%M:%S}")
@@ -733,6 +733,7 @@ def render_summary_tab():
 if __name__ == "__main__":
 
     main()
+
 
 
 
